@@ -1,1 +1,30 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" > ... </suite>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="ContactListAppTestSuite" parallel="false">
+
+    <test name="AuthenticationTests">
+        <classes>
+            <class name="tests.SignUpTest"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.LogoutTest"/>
+        </classes>
+    </test>
+
+    <test name="ContactManagementTests">
+        <classes>
+            <class name="tests.AddContactTest"/>
+            <class name="tests.EditContactTest"/>
+            <class name="tests.DeleteContactTest"/>
+            <class name="tests.ContactDisplayTest"/>
+        </classes>
+        
+    </test>
+    <listeners>
+    <listener class-name="utils.ScreenshotListener"/>
+</listeners>
+
+<listeners>
+    <listener class-name="utils.ScreenshotListener"/>
+    <listener class-name="utils.ExtentTestListener"/>
+</listeners>
+
+</suite>
